@@ -8,12 +8,12 @@
 #
 case node[:platform]
 when 'debian'
-apt_repository "emacs-snapshot" do
-  uri 'http://emacs.naquadah.org/'
-  distribution node['lsb']['codename']
-  components ['main']
-  key 'http://emacs.naquadah.org/key.gpg'
-end
+  apt_repository "emacs-snapshot" do
+    uri 'http://emacs.naquadah.org/'
+    distribution node['lsb']['codename']
+    components ['main']
+    key 'http://emacs.naquadah.org/key.gpg'
+  end
 when 'ubuntu'
   apt_repository "emacs-snapshot" do
     uri "http://ppa.launchpad.net/cassou/emacs/ubuntu"
